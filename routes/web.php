@@ -7,6 +7,7 @@ use App\Http\Controllers\Admin\PenggajianController;
 use App\Http\Controllers\Admin\ShiftController;
 use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\Auth\LoginController;
+use App\Http\Controllers\Karyawan\DashboardKaryawanController;
 use App\Http\Controllers\Karyawan\KaryawanBoronganController;
 use App\Http\Controllers\Karyawan\KaryawanPenggajianController;
 use App\Http\Controllers\Karyawan\KaryawanShiftController;
@@ -41,7 +42,7 @@ Route::middleware(['auth'])->group(function () {
     });
 
     Route::middleware(['role:karyawan'])->prefix('karyawan')->name('karyawan.')->group(function() {
-        Route::get('/dashboard', [KaryawanBoronganController::class, 'index'])->name('dashboard');
+        Route::get('/dashboard', [DashboardKaryawanController::class, 'index'])->name('dashboard');
 
         Route::get('/shifts', [KaryawanShiftController::class, 'index'])->name('shifts.index');
         Route::get('/shifts/{shift}', [KaryawanShiftController::class, 'show'])->name('shifts.show');

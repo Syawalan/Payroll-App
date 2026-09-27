@@ -1,14 +1,15 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Karyawan;
 
+use App\Http\Controllers\Controller;
 use App\Models\Borongan;
 use App\Models\Penggajian;
 use App\Models\Shift;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 
-class KaryawanDashboardController extends Controller
+class DashboardKaryawanController extends Controller
 {
     public function index()
     {
